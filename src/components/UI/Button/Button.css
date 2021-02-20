@@ -1,0 +1,28 @@
+.Button {
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+}
+
+.primary {
+    background-color: #e7ac07;
+}
+
+.done {
+    background-color: #23983c;
+}
+
+@media(hover: hover) and (pointer: fine) {
+    .primary:hover {
+        background-color: #ffc107;
+    }
+
+    .done:hover {
+        background-color: #28a745;
+    }
+}

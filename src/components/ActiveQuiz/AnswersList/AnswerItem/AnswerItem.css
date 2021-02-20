@@ -7,19 +7,19 @@
     cursor: pointer;
 }
 
-.AnswerItem:hover {
-    background: rgba(255, 255, 255, .2);
-    transition: background .3s ease-in-out;
+@media(hover: hover) and (pointer: fine) {
+    .AnswerItem:hover {
+        background: rgba(0, 0, 0, .2);
+        transition: background .3s ease-in-out;
+    }
 }
 
 .AnswerItem.success {
+    color: #fff;
     background: #28a745;
 }
 
 .AnswerItem.error {
-    background: #dc3545;
-}
-
-.success, .error {
     color: #fff;
+    background: #dc3545;
 }
