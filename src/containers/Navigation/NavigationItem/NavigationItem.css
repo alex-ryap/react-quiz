@@ -1,0 +1,15 @@
+.NavigationItem {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    margin: 15px 15px 5px;
+    cursor: pointer;
+}
+
+@media(hover: hover) and (pointer: fine) {
+    .NavigationItem:hover {
+        background: rgba(255, 193, 7, .3);
+        transition: background .3s ease-in-out;
+    }
+}

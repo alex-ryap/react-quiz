@@ -1,6 +1,6 @@
 import React from 'react';
 import './AnswersList.css';
-import AnswerItem from "./AnswerItem/AnswerItem";
+import AnswerItem from './AnswerItem/AnswerItem';
 
 const AnswersList = (props) => {
   return (
