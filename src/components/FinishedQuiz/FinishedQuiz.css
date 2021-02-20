@@ -15,10 +15,6 @@
     padding: 0;
 }
 
-.FinishedQuiz ul li i {
-    margin-left: 20px;
-}
-
 .FinishedQuiz p {
     margin-left: 20px;
 }
@@ -41,6 +37,15 @@
 .Results {
     padding: 10px;
     margin: 15px 15px 5px;
+}
+
+.Results ul li {
+    padding-top: 10px;
+}
+
+.Results ul li i {
+    width: 16px;
+    margin-right: 10px;
 }
 
 .Buttons {

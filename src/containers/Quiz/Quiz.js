@@ -1,7 +1,7 @@
 import React from 'react';
 import './Quiz.css'
-import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz";
-import FinishedQuiz from "../../components/FinishedQuiz/FinishedQuiz";
+import ActiveQuiz from '../../components/ActiveQuiz/ActiveQuiz';
+import FinishedQuiz from '../../components/FinishedQuiz/FinishedQuiz';
 
 class Quiz extends React.Component {
   constructor(props) {
@@ -9,32 +9,9 @@ class Quiz extends React.Component {
     this.state = {
       results: {},
       activeQuestion: 0,
-      isFinished: true,
+      isFinished: false,
       answerState: null,
-      quiz: [
-        {
-          question: 'Какой сегодня год?',
-          rightAnswerId: 2,
-          id: 1,
-          answers: [
-            {text: '2020', id: 1},
-            {text: '2021', id: 2},
-            {text: '2022', id: 3},
-            {text: '2007', id: 4}
-          ]
-        },
-        {
-          question: 'В каком году основали Санкт-Петербург?',
-          rightAnswerId: 3,
-          id: 2,
-          answers: [
-            {text: '1700', id: 1},
-            {text: '1709', id: 2},
-            {text: '1703', id: 3},
-            {text: '1721', id: 4}
-          ]
-        }
-      ]
+      quiz: null
     }
   }
 
@@ -102,18 +79,27 @@ class Quiz extends React.Component {
     return this.state.activeQuestion + 1 === this.state.quiz.length
   }
 
+  componentDidMount() {
+    this.setState({
+      quiz: this.props.quiz
+    })
+  }
+
   render() {
-    return (
-      <div className={'Quiz'}>
-        <div className={'QuizWrapper'}>
-          <h1>Тест</h1>
-          { this.state.isFinished
-            ? <FinishedQuiz
+
+    if (this.state.quiz) {
+      return (
+        <div className={'Quiz'}>
+          <div className={'QuizWrapper'}>
+            <h1>Тест по теме "{this.props.theme}"</h1>
+            { this.state.isFinished
+              ? <FinishedQuiz
                 results={this.state.results}
                 quiz={this.state.quiz}
                 onRetry={this.onRetryHandler}
+                onSelectQuiz={this.props.onSelectQuiz}
               />
-            : <ActiveQuiz
+              : <ActiveQuiz
                 question={this.state.quiz[this.state.activeQuestion].question}
                 answers={this.state.quiz[this.state.activeQuestion].answers}
                 onAnswerClick={this.onAnswerClickHandler}
@@ -121,10 +107,16 @@ class Quiz extends React.Component {
                 questionNumber={this.state.activeQuestion + 1}
                 state={this.state.answerState}
               />
-          }
+            }
+          </div>
         </div>
-      </div>
-    )
+      )
+    } else {
+      return (
+        <h1>Quiz not loaded</h1>
+      )
+    }
+
   }
 }
 

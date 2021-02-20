@@ -15,7 +15,7 @@ const FinishedQuiz = (props) => {
   return (
     <div className={'FinishedQuiz'}>
       <div className={'Results_header'}>
-        <p>Results</p>
+        <p>Результаты теста</p>
       </div>
       <div className={'Results'}>
         <ul>
@@ -27,10 +27,12 @@ const FinishedQuiz = (props) => {
                 props.results[quizItem.id]
               ]
               return (
-                <li key={index}>
+                <li
+                  key={index}
+                >
+                  <i className={iconClasses.join(' ')}/>
                   <strong>{index + 1}</strong>. &nbsp;
                   {quizItem.question}
-                  <i className={iconClasses.join(' ')}/>
                 </li>
               )
             })
@@ -50,6 +52,7 @@ const FinishedQuiz = (props) => {
         <Button
           type={'done'}
           icon={'fa-comment-dots'}
+          onClick={props.onSelectQuiz}
         >
           Новый тест
         </Button>
