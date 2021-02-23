@@ -156,7 +156,7 @@ class App extends React.Component {
             {
               question: 'К каким вирусам относится ВИЧ?',
               rightAnswerId: 3,
-              id: 1,
+              id: 4,
               answers: [
                 {text: 'Реовирусы', id: 1},
                 {text: 'Ротавирусы', id: 2},
