@@ -6,7 +6,7 @@ This project was created using React.
 
 ### Use Browser
 
-Download files from "public" directory and open in your Browser `index.html`
+Download files from "build" directory and open in your Browser `index.html`
 
 ### `yarn start` or `npm start`
 
