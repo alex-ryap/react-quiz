@@ -7,8 +7,9 @@ This project was created using React.
 ### Use Browser
 
 Download files from "build" directory and open in your Browser `index.html`
+<hr/>
 
-### `yarn start` or `npm start`
+### Use `yarn start` or `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
